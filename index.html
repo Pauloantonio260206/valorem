@@ -1,3 +1,8 @@
+Aqui está o código completo, reescrito e integrado com a função atualizada para disparar a mensagem direto para o seu WhatsApp (`5512987078624`).
+
+Você pode copiar este código inteiro e substituir o conteúdo do seu arquivo principal (por exemplo, `index.html`):
+
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -285,4 +290,342 @@
         .form-grupo input:focus, .form-grupo textarea:focus { outline: none; border-color: var(--accent-gold); background-color: rgba(6,17,33,0.95); }
 
         /* FOOTER */
-        footer { background-color: #030811; padding: 40px 0; text-align: center; color: var(--text-muted); font-size
+        footer { background-color: #030811; padding: 40px 0; text-align: center; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.05); }
+        .footer-links { display: flex; justify-content: center; align-items: center; gap: 24px; margin-top: 20px; }
+        .footer-links a { color: #E2E8F0; transition: var(--transition); font-size: 1.8rem; display: inline-block; }
+        .footer-links a:hover { color: var(--accent-gold); transform: translateY(-4px); }
+
+        @media (max-width: 900px) {
+            .contato-wrapper, .atuacao-grid, .sobre-grid { grid-template-columns: 1fr; }
+            .palestra-wrapper { flex-direction: column; text-align: center; }
+            .palestra-content { text-align: center; }
+            .vlr-diagram { flex-direction: column; gap: 40px; align-items: center; }
+            .vlr-diagram::before { display: none; }
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.2rem; }
+            .historia-box { padding: 30px 20px; }
+            .carousel-btn.prev { left: 5px; top: auto; bottom: 15px; transform: none; }
+            .carousel-btn.next { right: 5px; top: auto; bottom: 15px; transform: none; }
+            .palestra-logo-clean { max-width: 250px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <div class="logo-brand">
+                <img src="./Logo.jpeg.jpg" alt="Logotipo Valorem Consultoria" class="logo-img logo-dinamica">
+                <div class="logo-text">
+                    <span class="logo-title">VALOREM</span>
+                    <span class="logo-tagline">Consultoria</span>
+                </div>
+            </div>
+            <nav class="nav-links">
+                <a href="#sobre">Sobre Mim</a>
+                <a href="#metodo">Método VLR</a>
+                <a href="#atuacao">Atuação</a>
+                <a href="#palestras">Palestras</a>
+                <a href="#contato">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="container hero-content">
+                <span class="hero-badge reveal">Estratégia, Liderança & Resultados</span>
+                <h1 class="reveal">Resultados sustentáveis são construídos com pessoas engajadas.</h1>
+                <p class="reveal">Criador do Método VLR. Consultoria especializada em Estratégia, Liderança e Resultados. Há mais de 18 anos transformando a gestão na indústria.</p>
+                <div class="reveal">
+                    <a href="#contato" class="btn">Vamos conversar</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CITAÇÃO PETER DRUCKER -->
+        <section class="quote-section">
+            <div class="container quote-container reveal">
+                <div class="quote-icon">❝</div>
+                <p class="quote-text">Não troque as pessoas. É improvável que elas mudem. Melhore o ambiente de trabalho para que se adeque às pessoas que você tem.</p>
+                <span class="quote-author">— Peter Drucker</span>
+            </div>
+        </section>
+
+        <!-- SOBRE MIM & SEEDING -->
+        <section class="sobre" id="sobre">
+            <div class="container">
+                <h2 class="section-title reveal">Sobre Mim</h2>
+                
+                <div class="sobre-grid reveal">
+                    
+                    <!-- Lado Esquerdo: História (Carrossel com setas nas extremidades) -->
+                    <div class="historia-box">
+                        <button class="carousel-btn prev" onclick="mudarSlide(-1)">&#10094;</button>
+                        <button class="carousel-btn next" onclick="mudarSlide(1)">&#10095;</button>
+
+                        <div class="carousel-slide active" id="slide-0">
+                            <p style="font-size: 1.05rem; color: var(--accent-gold);"><b>Comecei pela base, na produção, e cada degrau me ensinou o que nenhum organograma mostra.</b></p>
+                            <p>Logo depois do ensino médio, entrei na linha de produção, como acontece com tantos brasileiros. Comecei como Auxiliar e, depois de seis anos, cheguei a Operador B, sentindo na pele o ritmo, a pressão e o cansaço de uma operação real.</p>
+                            <p>Mas uma pergunta não me largava. Toda vez que eu via supervisores e gerentes em ação, pensava: o que faz essa engrenagem girar além da linha de montagem? Sempre fui fascinado pela indústria e tinha certeza de que poderia ir além.</p>
+                        </div>
+
+                        <div class="carousel-slide" id="slide-1">
+                            <p>O mercado cobra um preço pela evolução, e eu decidi pagar. Conquistei, por mérito, uma bolsa no SENAI para o <b>Técnico em Química</b>, e esse foi o passaporte para uma vaga na área da Qualidade. Ali, minha visão mudou: descobri que a Qualidade é o setor que conecta a empresa de ponta a ponta.</p>
+                            <p>Fiz o ENEM, tirei nota máxima e conquistei uma bolsa integral em <b>Engenharia de Produção</b>. Dominei as metodologias mais rigorosas: APQP, PPAP, CEP Avançado, Auditor VDA e Especialista Internacional na Metodologia 8D.</p>
+                            <p>Em multinacional, liderei projetos complexos como Green Belt (entregando mais de 1 milhão de dólares em <i>saving</i> em 2019) e assumi a gestão de mais de 50 pessoas, concluindo o <b>MBA em Gestão de Pessoas na USP</b>.</p>
+                        </div>
+
+                        <div class="carousel-slide" id="slide-2">
+                            <p>Em cargos de gestão estratégica, assumi empresas que funcionavam no improviso: sem padrão e com o operacional desorganizado. Reestruturei os processos de ponta a ponta e conectei a diretoria à execução do chão de fábrica.</p>
+                            <p>Para fechar o ciclo de entendimento do negócio, fiz uma proposta ousada: trabalhar por um ano como vendedor. O resultado virou um case de sucesso: aumentei a carteira global em mais de 50%.</p>
+                            <p>Vivi todas essas dores na pele: a falta de processo na base, a liderança despreparada e os gargalos de vendas. Foi assim que criei o <b>Método VLR</b> e fundei a Valorem Consultoria.</p>
+                        </div>
+
+                        <div class="carousel-footer">
+                            <div class="carousel-dots">
+                                <span class="dot active" onclick="irParaSlide(0)"></span>
+                                <span class="dot" onclick="irParaSlide(1)"></span>
+                                <span class="dot" onclick="irParaSlide(2)"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lado Direito: Seeding Fixo -->
+                    <div class="seeding-box">
+                        <div>
+                            <h3>Se suas vendas dobrassem amanhã, o seu time aguentaria?</h3>
+                            <p class="seeding-intro">Na maioria das empresas, o problema que trava o crescimento não aparece no balanço. Ele aparece nas pessoas:</p>
+                            <ul class="seeding-perguntas">
+                                <li>O mesmo erro sendo corrigido todo mês, porque ninguém sabe exatamente o que é esperado dele.</li>
+                                <li>Um time ocupado o dia inteiro, mas que não entrega o que a estratégia promete.</li>
+                                <li>Uma equipe que não cresce na mesma velocidade que as vendas, e bons profissionais indo embora no meio do caminho.</li>
+                            </ul>
+                            <div class="seeding-conclusao">
+                                Cada um parece um problema isolado. Somados, são o dinheiro e a produtividade que você perde sem ver.<br><br>
+                                Eu já estive em todas as cadeiras desse processo: contratando, liderando e corrigindo. E quase sempre o problema não está onde o dono acha que está.
+                            </div>
+                        </div>
+                        <a href="#contato" class="btn" style="width: 100%; font-size: 0.9rem; padding: 12px 16px;">Quero descobrir onde meu time está travando</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- MÉTODO VLR -->
+        <section class="metodo" id="metodo">
+            <div class="container">
+                <h2 class="section-title reveal">MÉTODO VLR</h2>
+
+                <div class="vlr-diagram reveal">
+                    <button class="vlr-btn active-btn" id="btn-v" onclick="mostrarVLR('v')">
+                        <div class="vlr-circle-item v">V</div>
+                        <span class="vlr-label">Visão Estratégica</span>
+                    </button>
+                    
+                    <button class="vlr-btn" id="btn-l" onclick="mostrarVLR('l')">
+                        <div class="vlr-circle-item l">L</div>
+                        <span class="vlr-label">Liderança e Pessoas</span>
+                    </button>
+                    
+                    <button class="vlr-btn" id="btn-r" onclick="mostrarVLR('r')">
+                        <div class="vlr-circle-item r">R</div>
+                        <span class="vlr-label">Resultados</span>
+                    </button>
+                </div>
+
+                <div class="vlr-content-display reveal">
+                    <div class="vlr-text-block active" id="content-v">
+                        <h3>Visão Estratégica</h3>
+                        <p>Compreensão aprofundada do cenário corporativo, definição rigorosa de prioridades e conversão dos objetivos organizacionais numa direção clara para todos os níveis da empresa.</p>
+                    </div>
+                    <div class="vlr-text-block" id="content-l">
+                        <h3>Liderança e Pessoas</h3>
+                        <p>Desenvolvimento contínuo de líderes, alinhamento de equipas e construção de um ambiente operacional focado na entrega de valor com absoluta clareza de propósito.</p>
+                    </div>
+                    <div class="vlr-text-block" id="content-r">
+                        <h3>Resultados</h3>
+                        <p>Conversão do planeamento em execução efetiva, fortalecimento da gestão comercial e acompanhamento sistemático dos indicadores de impacto no negócio.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ÁREAS DE ATUAÇÃO -->
+        <section class="atuacao" id="atuacao">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2 class="section-title">Áreas de Atuação</h2>
+                </div>
+                <div class="atuacao-grid reveal">
+                    <div class="atuacao-card"><span class="atuacao-num">01.</span> Gestão estratégica e organização empresarial</div>
+                    <div class="atuacao-card"><span class="atuacao-num">02.</span> Desenvolvimento de lideranças e equipes</div>
+                    <div class="atuacao-card"><span class="atuacao-num">03.</span> Cultura organizacional e gestão de pessoas</div>
+                    <div class="atuacao-card"><span class="atuacao-num">04.</span> Estruturação e otimização de processos</div>
+                    <div class="atuacao-card"><span class="atuacao-num">05.</span> Gestão da qualidade e padronização operacional</div>
+                    <div class="atuacao-card"><span class="atuacao-num">06.</span> Desenvolvimento comercial e foco em resultados</div>
+                    <div class="atuacao-card"><span class="atuacao-num">07.</span> Mentoria executiva para gestores e empresários</div>
+                    <div class="atuacao-card"><span class="atuacao-num">08.</span> Treinamentos e palestras corporativas</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PALESTRAS -->
+        <section class="palestras" id="palestras">
+            <div class="container">
+                <div class="palestra-wrapper reveal">
+                    <div class="palestra-content">
+                        <span class="palestra-badge">Palestra Destaque</span>
+                        <h3>Conectando Gerações</h3>
+                        <p>O mercado de trabalho mudou. O choque cultural entre líderes experientes e a chegada da Geração Z exige uma nova abordagem de gestão. Esta palestra foi desenhada para desmistificar o conflito geracional, capacitando líderes e equipes a transformarem diferenças de mentalidade em colaboração estratégica, inovação e alta performance.</p>
+                        <a href="https://wa.me/5512987078624" target="_blank" class="btn">
+                            ↗ Levar palestra para a minha empresa
+                        </a>
+                    </div>
+                    <div class="palestra-image-box">
+                        <img src="./Logo.jpeg.jpg" alt="Logotipo Valorem Consultoria" class="palestra-logo-clean logo-dinamica">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTATO E REDES SOCIAIS -->
+        <section class="contato" id="contato">
+            <div class="container">
+                <div class="contato-wrapper">
+                    <div class="contato-info reveal">
+                        <h2 class="section-title" style="text-align: left; margin-bottom: 20px; font-size: 1.5rem;">Contato</h2>
+                        <h3 style="font-size: 1.8rem; margin-bottom: 20px; line-height: 1.3;">Caso a sua empresa apresente potencial de entrega superior ao atual, o fator limitante pode estar na estrutura de gestão.</h3>
+                        <p>A permanência do desalinhamento operacional resulta na perda contínua de oportunidades, tempo e recursos financeiros. Agende uma conversa para estruturarmos o crescimento da sua organização.</p>
+                        
+                        <div class="contact-buttons">
+                            <a href="https://wa.me/5512987078624" target="_blank" class="btn btn-icon">
+                                <i class="fa-brands fa-whatsapp" style="font-size: 1.4rem;"></i> Atendimento via WhatsApp
+                            </a>
+                            <a href="https://www.linkedin.com/in/paulo-aantonio/" target="_blank" class="btn-outline btn-icon">
+                                <i class="fa-brands fa-linkedin-in" style="font-size: 1.4rem;"></i> LinkedIn
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contato-form reveal">
+                        <form id="whatsappForm" onsubmit="enviarParaWhatsApp(event)">
+                            <div class="form-grupo">
+                                <label for="nome">Nome Completo</label>
+                                <input type="text" id="nome" required placeholder="Digite o seu nome completo">
+                            </div>
+                            <div class="form-grupo">
+                                <label for="email">E-mail Corporativo</label>
+                                <input type="email" id="email" required placeholder="nome@empresa.com.br">
+                            </div>
+                            <div class="form-grupo">
+                                <label for="mensagem">Mensagem</label>
+                                <textarea id="mensagem" rows="4" required placeholder="Descreva brevemente a necessidade da sua empresa"></textarea>
+                            </div>
+                            <button type="submit" class="btn" style="width: 100%; border-radius: 4px;">Enviar Mensagem via WhatsApp</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; Valorem Consultoria • Método VLR. Todos os direitos reservados conforme a legislação vigente.</p>
+            <div class="footer-links">
+                <a href="https://wa.me/5512987078624" target="_blank" aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/paulo-aantonio/" target="_blank" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.instagram.com/valoremconsultoria" target="_blank" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const logoNomes = ['./Logo.jpeg.jpg', 'logo.jpg', 'Logo.jpg', 'logo.png', 'logo.jpeg', 'valorem.jpg'];
+            const imagensLogo = document.querySelectorAll('.logo-dinamica');
+            
+            function tentarCarregar(imgElement, index) {
+                if (index >= logoNomes.length) return; 
+                let testImg = new Image();
+                testImg.onload = function() {
+                    imgElement.src = testImg.src;
+                    imgElement.style.display = 'block'; 
+                };
+                testImg.onerror = function() {
+                    tentarCarregar(imgElement, index + 1); 
+                };
+                testImg.src = logoNomes[index];
+            }
+            imagensLogo.forEach(img => { tentarCarregar(img, 0); });
+        });
+
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) { reveals[i].classList.add("active"); }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+
+        let slideAtual = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.dot');
+        
+        function irParaSlide(index) {
+            slides.forEach(s => s.classList.remove('active'));
+            dots.forEach(d => d.classList.remove('active'));
+            slideAtual = index;
+            slides[slideAtual].classList.add('active');
+            dots[slideAtual].classList.add('active');
+        }
+        
+        function mudarSlide(direcao) {
+            let novoIndex = slideAtual + direcao;
+            if (novoIndex >= slides.length) novoIndex = 0;
+            if (novoIndex < 0) novoIndex = slides.length - 1;
+            irParaSlide(novoIndex);
+        }
+
+        function mostrarVLR(letra) {
+            document.querySelectorAll('.vlr-text-block').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.vlr-btn').forEach(b => b.classList.remove('active-btn'));
+            document.getElementById('content-' + letra).classList.add('active');
+            document.getElementById('btn-' + letra).classList.add('active-btn');
+        }
+
+        // Função de disparo para o WhatsApp
+        function enviarParaWhatsApp(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const mensagem = document.getElementById('mensagem').value.trim();
+
+            const numeroWhatsApp = "5512987078624";
+
+            const textoFormatado = `Olá, meu nome é *${nome}*.\nE-mail corporativo: ${email}\n\n*Necessidade da empresa:*\n${mensagem}`;
+
+            const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(textoFormatado)}`;
+
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
+
+```
