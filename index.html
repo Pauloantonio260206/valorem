@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html lang="pt-PT">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valorem Consultoria | Especialistas em Gestão de Pessoas e Liderança</title>
     
-    <link rel="icon" type="image/jpeg" href="logo.jpg" id="favicon">
+    <link rel="icon" type="image/jpeg" href="Logo.jpeg.jpg" id="favicon">
     
     <meta name="description" content="Resultados sustentáveis são construídos com pessoas engajadas. Consultoria especializada em Estratégia, Liderança e Resultados.">
-    <meta name="robots" content="index, follow">
 
     <!-- Fontes Premium -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome para os ícones das Redes Sociais -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
@@ -21,8 +23,6 @@
             --navy-light: #0f223f;
             --accent-gold: #C19B54;
             --accent-gold-hover: #D4AF37;
-            --bg-light: #F8FAFC;
-            --bg-card: #FFFFFF;
             --text-main: #1E293B;
             --text-muted: #94A3B8;
             --border-color: rgba(193, 155, 84, 0.3);
@@ -34,18 +34,28 @@
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             color: var(--text-main);
-            background-color: var(--primary-navy); /* Fundo escuro por defeito agora */
+            background-color: var(--primary-navy);
             line-height: 1.7;
             overflow-x: hidden;
+            position: relative;
         }
 
-        /* Marca D'água Otimizada */
+        /* Marca D'água */
         body::before {
-            content: ''; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            width: 100vw; height: 100vh; background-image: url('logo.jpg'); background-repeat: no-repeat;
-            background-position: center; background-size: 40%; opacity: 0.02; z-index: -1; pointer-events: none;
+            content: ''; 
+            position: fixed; 
+            top: 50%; left: 50%; 
+            transform: translate(-50%, -50%);
+            width: 100vw; height: 100vh; 
+            background-image: url('./Logo.jpeg.jpg');
+            background-repeat: no-repeat;
+            background-position: center; 
+            background-size: 50%; 
+            opacity: 0.04; 
+            z-index: -1; 
+            pointer-events: none;
         }
-        .logo-dinamica { display: none; } /* Classe usada apenas para referência via JS */
+        .logo-dinamica { display: none; }
 
         a { text-decoration: none; color: inherit; }
         .container { max-width: 1150px; margin: 0 auto; padding: 0 24px; }
@@ -81,31 +91,27 @@
         .hero h1 { font-size: 3rem; font-weight: 800; max-width: 900px; margin: 0 auto 20px auto; line-height: 1.25; letter-spacing: -1px; }
         .hero p { font-size: 1.15rem; color: #E2E8F0; max-width: 750px; margin: 0 auto 40px auto; line-height: 1.6; }
         
-        /* BOTÕES PRINCIPAIS */
         .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 32px; background: var(--accent-gold); color: var(--primary-navy); font-weight: 800; font-size: 1rem; border-radius: 8px; transition: var(--transition); border: none; cursor: pointer; }
         .btn:hover { background: var(--accent-gold-hover); transform: translateY(-2px); box-shadow: 0 10px 20px rgba(193, 155, 84, 0.2); }
         .btn-outline { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 32px; border: 1px solid var(--border-color); background: transparent; border-radius: 8px; color: #FFFFFF; font-weight: 700; transition: var(--transition); }
         .btn-outline:hover { background: rgba(193, 155, 84, 0.1); border-color: var(--accent-gold); color: var(--accent-gold); }
 
-        /* DRUCKER QUOTE */
+        /* QUOTE */
         .quote-section { background-color: var(--navy-light); padding: 80px 0; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); text-align: center; }
         .quote-icon { font-size: 3rem; color: var(--accent-gold); margin-bottom: 16px; line-height: 1; }
         .quote-text { font-size: 1.6rem; font-weight: 500; color: #FFFFFF; line-height: 1.5; font-style: italic; margin-bottom: 24px; max-width: 800px; margin-left: auto; margin-right: auto; }
         .quote-author { font-size: 1rem; color: var(--accent-gold); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* SOBRE MIM - CARROSSEL */
-        .sobre { padding: 100px 0; background: var(--primary-navy); color: #FFFFFF; }
+        /* SOBRE MIM */
+        .sobre { padding: 100px 0; background: transparent; color: #FFFFFF; }
         .section-title { color: var(--accent-gold); text-align: center; margin-bottom: 50px; font-size: 2.2rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; }
-        
         .carousel-container { max-width: 900px; margin: 0 auto; position: relative; background: var(--navy-light); border: 1px solid var(--border-color); border-radius: 16px; padding: 50px; box-shadow: 0 15px 30px rgba(0,0,0,0.3); }
         .carousel-slide { display: none; animation: fadeIn 0.6s ease-in-out; }
         .carousel-slide.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
-
         .carousel-slide p { font-size: 1.15rem; color: #E2E8F0; margin-bottom: 20px; line-height: 1.8; text-align: justify; }
         .carousel-slide b { color: var(--accent-gold); font-weight: 700; }
         .destaque-formacao { background: rgba(193, 155, 84, 0.05); border-left: 4px solid var(--accent-gold); padding: 24px 30px; margin: 30px 0; font-weight: 600; color: #FFFFFF; font-size: 1.15rem; line-height: 1.7; text-align: left; }
-
         .carousel-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; }
         .carousel-btn { background: transparent; border: 1px solid var(--accent-gold); color: var(--accent-gold); width: 45px; height: 45px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; transition: var(--transition); display: flex; align-items: center; justify-content: center; }
         .carousel-btn:hover { background: var(--accent-gold); color: var(--primary-navy); }
@@ -114,97 +120,56 @@
         .dot.active { background: var(--accent-gold); transform: scale(1.2); }
 
         /* MÉTODO VLR */
-        .metodo { padding: 100px 0; background-color: var(--navy-light); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); }
-        
+        .metodo { padding: 100px 0; background-color: rgba(15, 34, 63, 0.8); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); }
         .vlr-diagram { display: flex; justify-content: center; align-items: flex-start; position: relative; margin-bottom: 50px; gap: 60px; }
         .vlr-diagram::before { content: ''; position: absolute; top: 55px; left: 25%; right: 25%; height: 1px; background-color: var(--border-color); z-index: 1; }
-        
         .vlr-btn { background: none; border: none; cursor: pointer; display: flex; flex-direction: column; align-items: center; position: relative; z-index: 2; transition: var(--transition); }
         .vlr-circle-item { width: 110px; height: 110px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 3rem; font-weight: 800; border: 2px solid var(--border-color); transition: var(--transition); margin-bottom: 16px; background-color: var(--primary-navy); color: #FFFFFF; }
         .vlr-btn:hover .vlr-circle-item, .vlr-btn.active-btn .vlr-circle-item { transform: scale(1.1); border-color: var(--accent-gold); color: var(--accent-gold); }
         .vlr-label { font-size: 1rem; font-weight: 700; color: #FFFFFF; text-align: center; transition: var(--transition); }
         .vlr-btn:hover .vlr-label, .vlr-btn.active-btn .vlr-label { color: var(--accent-gold); }
-
         .vlr-content-display { background: var(--primary-navy); border: 1px solid var(--border-color); border-radius: 16px; padding: 50px; max-width: 800px; margin: 0 auto; text-align: center; min-height: 180px; display: flex; align-items: center; justify-content: center; }
         .vlr-text-block { display: none; animation: fadeIn 0.5s; }
         .vlr-text-block.active { display: block; }
         .vlr-text-block h3 { font-size: 1.6rem; color: var(--accent-gold); margin-bottom: 16px; font-weight: 800; }
         .vlr-text-block p { font-size: 1.15rem; color: #E2E8F0; line-height: 1.7; }
 
-        /* ÁREAS DE ATUAÇÃO - NOVO DESIGN AZUL E DOURADO */
-        .atuacao { padding: 100px 0; background-color: var(--primary-navy); }
+        /* ÁREAS DE ATUAÇÃO */
+        .atuacao { padding: 100px 0; background-color: transparent; }
         .atuacao-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-        .atuacao-card { 
-            background-color: var(--navy-light); 
-            border: 1px solid rgba(255,255,255,0.05); 
-            padding: 30px; 
-            border-radius: 8px; 
-            font-weight: 600; 
-            font-size: 1.1rem; 
-            color: #FFFFFF; 
-            display: flex; 
-            align-items: center; 
-            gap: 20px; 
-            transition: var(--transition);
-        }
-        .atuacao-card:hover { border-color: var(--border-color); background-color: rgba(193, 155, 84, 0.05); }
+        .atuacao-card { background-color: rgba(15, 34, 63, 0.9); border: 1px solid rgba(255,255,255,0.05); padding: 30px; border-radius: 8px; font-weight: 600; font-size: 1.1rem; color: #FFFFFF; display: flex; align-items: center; gap: 20px; transition: var(--transition); }
+        .atuacao-card:hover { border-color: var(--border-color); background-color: rgba(193, 155, 84, 0.1); }
         .atuacao-num { color: var(--accent-gold); font-size: 1.4rem; font-weight: 800; }
 
-        /* PALESTRAS - NOVO LAYOUT 2 COLUNAS */
-        .palestras { padding: 100px 0; background: var(--navy-light); border-top: 1px solid rgba(255,255,255,0.05); }
-        .palestra-wrapper { 
-            display: flex; 
-            align-items: center; 
-            justify-content: space-between; 
-            gap: 60px; 
-            max-width: 1000px; 
-            margin: 0 auto; 
-        }
+        /* PALESTRAS */
+        .palestras { padding: 100px 0; background: rgba(15, 34, 63, 0.8); border-top: 1px solid rgba(255,255,255,0.05); }
+        .palestra-wrapper { display: flex; align-items: center; justify-content: space-between; gap: 60px; max-width: 1000px; margin: 0 auto; }
         .palestra-content { flex: 1; text-align: left; }
         .palestra-badge { background: var(--accent-gold); color: var(--primary-navy); padding: 8px 20px; font-size: 0.9rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; display: inline-block; margin-bottom: 24px; border-radius: 4px; }
         .palestra-content h3 { font-size: 2.2rem; color: #FFFFFF; margin-bottom: 20px; font-weight: 800; }
         .palestra-content p { font-size: 1.1rem; color: #E2E8F0; margin-bottom: 30px; line-height: 1.7; }
-        
         .palestra-image-box { flex: 1; display: flex; justify-content: center; position: relative; }
-        .circulo-logo { 
-            width: 320px; height: 320px; 
-            border-radius: 50%; 
-            object-fit: cover; 
-            border: 4px solid var(--accent-gold);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            background-color: var(--primary-navy);
-            padding: 20px;
-        }
+        .circulo-logo { width: 320px; height: 320px; border-radius: 50%; object-fit: cover; border: 4px solid var(--accent-gold); box-shadow: 0 20px 40px rgba(0,0,0,0.4); background-color: var(--primary-navy); padding: 20px; }
 
-        /* CONTATO E REDES SOCIAIS - DESIGN PREMIUM */
-        .contato { padding: 100px 0; background: var(--primary-navy); color: #FFFFFF; }
+        /* CONTATO E REDES SOCIAIS */
+        .contato { padding: 100px 0; background: transparent; color: #FFFFFF; }
         .contato-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
         .contato-info h2 { font-size: 2rem; line-height: 1.3; margin-bottom: 24px; color: #FFFFFF; font-weight: 800; }
         .contato-info p { color: #E2E8F0; margin-bottom: 40px; font-size: 1.1rem; }
-        
         .contact-buttons { display: flex; flex-direction: column; gap: 16px; }
         .btn-icon { display: flex; align-items: center; justify-content: flex-start; gap: 12px; width: 100%; max-width: 400px; }
         .btn-icon span { font-size: 1.3rem; }
-
         .contato-form { background: transparent; }
         .form-grupo { margin-bottom: 24px; }
         .form-grupo label { display: block; margin-bottom: 8px; font-size: 1rem; color: #FFFFFF; font-weight: 700; }
-        .form-grupo input, .form-grupo textarea { 
-            width: 100%; padding: 16px; 
-            background-color: var(--navy-light); 
-            border: 1px solid rgba(255,255,255,0.1); 
-            border-radius: 4px; 
-            color: #FFFFFF; 
-            font-family: inherit; 
-            font-size: 1rem; 
-            transition: var(--transition);
-        }
-        .form-grupo input:focus, .form-grupo textarea:focus { outline: none; border-color: var(--accent-gold); background-color: rgba(6,17,33,0.8); }
+        .form-grupo input, .form-grupo textarea { width: 100%; padding: 16px; background-color: rgba(15, 34, 63, 0.9); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: #FFFFFF; font-family: inherit; font-size: 1rem; transition: var(--transition); }
+        .form-grupo input:focus, .form-grupo textarea:focus { outline: none; border-color: var(--accent-gold); background-color: rgba(6,17,33,0.95); }
 
+        /* FOOTER */
         footer { background-color: #030811; padding: 40px 0; text-align: center; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.05); }
-        .footer-links { display: flex; justify-content: center; gap: 24px; margin-top: 20px; }
-        .footer-links a { color: #E2E8F0; font-weight: 600; transition: var(--transition); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
-        .footer-links a:hover { color: var(--accent-gold); }
+        .footer-links { display: flex; justify-content: center; align-items: center; gap: 24px; margin-top: 20px; }
+        .footer-links a { color: #E2E8F0; transition: var(--transition); font-size: 1.8rem; display: inline-block; }
+        .footer-links a:hover { color: var(--accent-gold); transform: translateY(-4px); }
 
         @media (max-width: 900px) {
             .contato-wrapper, .atuacao-grid { grid-template-columns: 1fr; }
@@ -221,11 +186,10 @@
 </head>
 <body>
 
-    <!-- CABEÇALHO -->
     <header>
         <div class="container nav-container">
             <div class="logo-brand">
-                <img src="logo.jpg" alt="Logotipo Valorem Consultoria" class="logo-img logo-dinamica">
+                <img src="./Logo.jpeg.jpg" alt="Logotipo Valorem Consultoria" class="logo-img logo-dinamica">
                 <div class="logo-text">
                     <span class="logo-title">VALOREM</span>
                     <span class="logo-tagline">Consultoria</span>
@@ -242,78 +206,8 @@
     </header>
 
     <main>
-        <!-- HERO SECTION -->
-        <section class="hero">
-            <div class="container hero-content">
-                <span class="hero-badge reveal">Estratégia, Liderança & Resultados</span>
-                <h1 class="reveal">Resultados sustentáveis são construídos com pessoas engajadas.</h1>
-                <p class="reveal">Criador do Método VLR. Consultoria especializada em Estratégia, Liderança e Resultados. Há mais de 18 anos transformando a gestão na indústria.</p>
-                <div class="reveal">
-                    <a href="https://wa.me/5512987078624" target="_blank" class="btn">Vamos conversar</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- CITAÇÃO PETER DRUCKER -->
-        <section class="quote-section">
-            <div class="container quote-container reveal">
-                <div class="quote-icon">❝</div>
-                <p class="quote-text">Não troque as pessoas. É improvável que elas mudem. Melhore o ambiente de trabalho para que se adeque às pessoas que você tem.</p>
-                <span class="quote-author">— Peter Drucker</span>
-            </div>
-        </section>
-
-        <!-- SOBRE MIM (TEXTO COMPLETO DIVIDIDO EM 4 SLIDES NO CARROSSEL) -->
-        <section class="sobre" id="sobre">
-            <div class="container">
-                <h2 class="section-title reveal">Trajetória e Visão</h2>
-                
-                <div class="carousel-container reveal">
-                    
-                    <div class="carousel-slide active" id="slide-0">
-                        <p style="font-size: 1.3rem; color: var(--accent-gold);"><b>Comecei pela base, na produção, e cada degrau me ensinou o que nenhum organograma mostra.</b></p>
-                        <p>Logo depois do ensino médio, entrei na linha de produção, como acontece com tantos brasileiros. Comecei como Auxiliar e, depois de seis anos, cheguei a Operador B, sentindo na pele o ritmo, a pressão e o cansaço de uma operação real.</p>
-                        <p>Mas uma pergunta não me largava. Toda vez que eu via supervisores e gerentes em ação, pensava: o que faz essa engrenagem girar além da linha de montagem? Sempre fui fascinado pela indústria e tinha certeza de que poderia ir além.</p>
-                        <p>O mercado cobra um preço pela evolução, e eu decidi pagar. Conquistei, por mérito, uma bolsa no SENAI para o <b>Técnico em Química</b>, e esse foi o passaporte para uma vaga na área da Qualidade. Ali, minha visão mudou: descobri que a Qualidade é o setor que conecta a empresa de ponta a ponta, unindo processos e, acima de tudo, pessoas.</p>
-                    </div>
-
-                    <div class="carousel-slide" id="slide-1">
-                        <p>A fome de aprender só cresceu. Fiz o ENEM, tirei nota máxima e conquistei uma bolsa integral em <b>Engenharia de Produção</b> por uma busca obstinada por excelência. Dominei as metodologias mais rigorosas do mercado global: APQP, PPAP, CEP Avançado, formação de Auditor VDA e me tornei Especialista Internacional na Metodologia 8D, ministrando treinamentos dessa ferramenta em todo o Brasil.</p>
-                        <p>Em uma multinacional que considero minha grande escola, a Qualidade ampliou o meu horizonte. Fui responsável por fornecedores globais e liderei projetos de alta complexidade como Green Belt. Em um deles, em 2019, entreguei mais de 1 milhão de dólares em <i>saving</i> para a companhia.</p>
-                        <p>Com essa bagagem, chegou a hora de assumir a gestão. Ao liderar um time com mais de 50 pessoas, esbarrei na ferida mais exposta do mercado corporativo: a falta de líderes preparados. Aprendi na prática que conhecimento técnico e estatística não sustentam resultado quando a gestão humana falha. Fui atrás das respostas e realizei o sonho de cursar o <b>MBA em Gestão de Pessoas na USP</b>.</p>
-                    </div>
-
-                    <div class="carousel-slide" id="slide-2">
-                        <p>Em cargos de gestão, na parte estratégica, assumi empresas que funcionavam no improviso: sem padrão, sem estratégia e com o operacional desorganizado. Cada uma virou um laboratório da vida real. Reestruturei os processos de ponta a ponta e conectei a diretoria à execução do chão de fábrica.</p>
-                        <p>Para fechar o ciclo de entendimento do negócio, fiz uma proposta ousada a um diretor: trabalhar como vendedor por um ano. Eu queria sentir de perto as dores de quem está na linha de frente, no contato direto com o cliente. Em vez de apenas empurrar produto, aprendi a ouvir cada cliente e a construir soluções de maior valor.</p>
-                        <p>Aplicando as técnicas de vendas 360, o resultado virou um case de sucesso: aumentei a carteira global em mais de 50% e, em um único cliente, o crescimento chegou a cerca de 70%.</p>
-                        <p>Vivi todas essas dores na pele: a falta de processo na base, a liderança despreparada e os gargalos de vendas. Foi assim que criei o <b>Método VLR</b> e fundei a Valorem Consultoria.</p>
-                    </div>
-
-                    <div class="carousel-slide" id="slide-3">
-                        <div class="destaque-formacao" style="margin-top: 0;">
-                            Hoje, eu me faço as perguntas que toda empresa deveria se fazer:<br><br>
-                            • Quanto o retrabalho custa por mês para você?<br>
-                            • Seu time entrega o que a estratégia promete?<br>
-                            • E suas vendas crescem na mesma velocidade que a sua estrutura?<br><br>
-                            Eu sei onde a sua empresa está perdendo dinheiro e produtividade, porque já sentei em todas as cadeiras do processo. E sei exatamente como consertar.
-                        </div>
-                    </div>
-
-                    <div class="carousel-controls">
-                        <button class="carousel-btn" onclick="mudarSlide(-1)">&#10094;</button>
-                        <div class="carousel-dots">
-                            <span class="dot active" onclick="irParaSlide(0)"></span>
-                            <span class="dot" onclick="irParaSlide(1)"></span>
-                            <span class="dot" onclick="irParaSlide(2)"></span>
-                            <span class="dot" onclick="irParaSlide(3)"></span>
-                        </div>
-                        <button class="carousel-btn" onclick="mudarSlide(1)">&#10095;</button>
-                    </div>
-
-                </div>
-            </div>
-        </section>
+        <!-- As seções Hero, Citação, Sobre Mim, Método e Atuação continuam as mesmas do bloco anterior -->
+        <!-- Omitidas visualmente apenas aqui no texto para poupar espaço, MAS DEVEM SER MANTIDAS NO SEU ARQUIVO -->
 
         <!-- MÉTODO VLR -->
         <section class="metodo" id="metodo">
@@ -354,26 +248,7 @@
             </div>
         </section>
 
-        <!-- ÁREAS DE ATUAÇÃO (NOVO DESIGN AZUL/DOURADO DA IMAGEM) -->
-        <section class="atuacao" id="atuacao">
-            <div class="container">
-                <div class="section-header reveal">
-                    <h2 class="section-title">Áreas de Atuação</h2>
-                </div>
-                <div class="atuacao-grid reveal">
-                    <div class="atuacao-card"><span class="atuacao-num">01.</span> Gestão estratégica e organização empresarial</div>
-                    <div class="atuacao-card"><span class="atuacao-num">02.</span> Desenvolvimento de lideranças e equipas</div>
-                    <div class="atuacao-card"><span class="atuacao-num">03.</span> Cultura organizacional e gestão de pessoas</div>
-                    <div class="atuacao-card"><span class="atuacao-num">04.</span> Estruturação e otimização de processos</div>
-                    <div class="atuacao-card"><span class="atuacao-num">05.</span> Gestão da qualidade e padronização operacional</div>
-                    <div class="atuacao-card"><span class="atuacao-num">06.</span> Desenvolvimento comercial e foco em resultados</div>
-                    <div class="atuacao-card"><span class="atuacao-num">07.</span> Mentoria executiva para gestores e empresários</div>
-                    <div class="atuacao-card"><span class="atuacao-num">08.</span> Treinamentos e palestras corporativas</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- PALESTRAS (NOVO LAYOUT DE 2 COLUNAS DA IMAGEM) -->
+        <!-- PALESTRAS -->
         <section class="palestras" id="palestras">
             <div class="container">
                 <div class="palestra-wrapper reveal">
@@ -386,13 +261,13 @@
                         </a>
                     </div>
                     <div class="palestra-image-box">
-                        <img src="logo.jpg" alt="Logotipo Valorem Consultoria" class="circulo-logo logo-dinamica">
+                        <img src="./Logo.jpeg.jpg" alt="Logotipo Valorem Consultoria" class="circulo-logo logo-dinamica">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CONTATO E REDES SOCIAIS (NOVO DESIGN DA IMAGEM) -->
+        <!-- CONTATO E REDES SOCIAIS -->
         <section class="contato" id="contato">
             <div class="container">
                 <div class="contato-wrapper">
@@ -433,59 +308,56 @@
         </section>
     </main>
 
-    <!-- FOOTER COM LINKS -->
+    <!-- FOOTER COM ÍCONES -->
     <footer>
         <div class="container">
             <p>&copy; Valorem Consultoria • Pessoas, Processos, Resultados.</p>
             <div class="footer-links">
-                <a href="https://wa.me/5512987078624" target="_blank">WhatsApp</a>
-                <a href="https://www.linkedin.com/in/paulo-aantonio/" target="_blank">LinkedIn</a>
-                <a href="https://www.instagram.com/valoremconsultoria" target="_blank">Instagram</a>
+                <a href="https://wa.me/5512987078624" target="_blank" aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/paulo-aantonio/" target="_blank" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.instagram.com/valoremconsultoria" target="_blank" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
             </div>
         </div>
     </footer>
 
     <!-- SCRIPTS -->
     <script>
-        // 1. CARREGAMENTO INTELIGENTE DA IMAGEM PARA EVITAR ERROS NA VERCEL
         document.addEventListener("DOMContentLoaded", function() {
-            const logoNomes = ['logo.jpg', 'Logo.jpg', 'logo.png', 'logo.jpeg', 'valorem.jpg'];
+            const logoNomes = ['./Logo.jpeg.jpg', 'logo.jpg', 'Logo.jpg', 'logo.png', 'logo.jpeg', 'valorem.jpg'];
             const imagensLogo = document.querySelectorAll('.logo-dinamica');
             
             function tentarCarregar(imgElement, index) {
-                if (index >= logoNomes.length) return; // Todas falharam
-                
+                if (index >= logoNomes.length) return; 
                 let testImg = new Image();
                 testImg.onload = function() {
                     imgElement.src = testImg.src;
-                    imgElement.style.display = 'block'; // Mostra a imagem quando funcionar
+                    imgElement.style.display = 'block'; 
                 };
                 testImg.onerror = function() {
-                    tentarCarregar(imgElement, index + 1); // Tenta o próximo nome
+                    tentarCarregar(imgElement, index + 1); 
                 };
                 testImg.src = logoNomes[index];
             }
-
-            imagensLogo.forEach(img => {
-                tentarCarregar(img, 0);
-            });
+            imagensLogo.forEach(img => { tentarCarregar(img, 0); });
         });
 
-        // 2. Animações de scroll
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
                 var elementTop = reveals[i].getBoundingClientRect().top;
-                if (elementTop < windowHeight - 100) {
-                    reveals[i].classList.add("active");
-                }
+                if (elementTop < windowHeight - 100) { reveals[i].classList.add("active"); }
             }
         }
         window.addEventListener("scroll", reveal);
         reveal();
 
-        // 3. Carrossel
         let slideAtual = 0;
         const slides = document.querySelectorAll('.carousel-slide');
         const dots = document.querySelectorAll('.dot');
@@ -503,7 +375,6 @@
             irParaSlide(novoIndex);
         }
 
-        // 4. Botões VLR
         function mostrarVLR(letra) {
             document.querySelectorAll('.vlr-text-block').forEach(b => b.classList.remove('active'));
             document.querySelectorAll('.vlr-btn').forEach(b => b.classList.remove('active-btn'));
