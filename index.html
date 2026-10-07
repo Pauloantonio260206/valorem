@@ -91,7 +91,7 @@
         .hero h1 { font-size: 3rem; font-weight: 800; max-width: 900px; margin: 0 auto 20px auto; line-height: 1.25; letter-spacing: -1px; }
         .hero p { font-size: 1.15rem; color: #E2E8F0; max-width: 750px; margin: 0 auto 40px auto; line-height: 1.6; }
         
-        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 32px; background: var(--accent-gold); color: var(--primary-navy); font-weight: 800; font-size: 1rem; border-radius: 8px; transition: var(--transition); border: none; cursor: pointer; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 32px; background: var(--accent-gold); color: var(--primary-navy); font-weight: 800; font-size: 1rem; border-radius: 8px; transition: var(--transition); border: none; cursor: pointer; text-align: center; }
         .btn:hover { background: var(--accent-gold-hover); transform: translateY(-2px); box-shadow: 0 10px 20px rgba(193, 155, 84, 0.2); }
         .btn-outline { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 32px; border: 1px solid var(--border-color); background: transparent; border-radius: 8px; color: #FFFFFF; font-weight: 700; transition: var(--transition); }
         .btn-outline:hover { background: rgba(193, 155, 84, 0.1); border-color: var(--accent-gold); color: var(--accent-gold); }
@@ -102,33 +102,129 @@
         .quote-text { font-size: 1.6rem; font-weight: 500; color: #FFFFFF; line-height: 1.5; font-style: italic; margin-bottom: 24px; max-width: 800px; margin-left: auto; margin-right: auto; }
         .quote-author { font-size: 1rem; color: var(--accent-gold); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* SOBRE MIM (Layout em Duas Colunas: Esquerda Carrossel, Direita Seeding Fixo) */
+        /* SOBRE MIM & SEEDING (LADO A LADO) */
         .sobre { padding: 100px 0; background: transparent; color: #FFFFFF; }
         .section-title { color: var(--accent-gold); text-align: center; margin-bottom: 50px; font-size: 2.2rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; }
         
-        .sobre-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 30px; align-items: stretch; max-width: 1150px; margin: 0 auto; }
-        
-        .carousel-container { background: var(--navy-light); border: 1px solid var(--border-color); border-radius: 16px; padding: 40px; box-shadow: 0 15px 30px rgba(0,0,0,0.3); display: flex; flex-direction: column; justify-content: space-between; }
+        .sobre-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 30px;
+            align-items: stretch;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Bloco Esquerdo: História (Carrossel com setas nas extremidades) */
+        .historia-box {
+            background: var(--navy-light);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 40px 60px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
         .carousel-slide { display: none; animation: fadeIn 0.6s ease-in-out; }
         .carousel-slide.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateX(10px); } to { opacity: 1; transform: translateX(0); } }
-        .carousel-slide p { font-size: 1.05rem; color: #E2E8F0; margin-bottom: 16px; line-height: 1.7; text-align: justify; }
-        .carousel-slide b { color: var(--accent-gold); font-weight: 700; }
         
-        .carousel-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; }
-        .carousel-btn { background: transparent; border: 1px solid var(--accent-gold); color: var(--accent-gold); width: 40px; height: 40px; border-radius: 50%; font-size: 1rem; cursor: pointer; transition: var(--transition); display: flex; align-items: center; justify-content: center; }
-        .carousel-btn:hover { background: var(--accent-gold); color: var(--primary-navy); }
+        .carousel-slide p { font-size: 1.02rem; color: #E2E8F0; margin-bottom: 16px; line-height: 1.7; text-align: justify; }
+        .carousel-slide b { color: var(--accent-gold); font-weight: 700; }
+
+        /* Botões nas extremidades laterais do bloco esquerdo */
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary-navy);
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+        .carousel-btn.prev { left: -22px; }
+        .carousel-btn.next { right: -22px; }
+        .carousel-btn:hover { background: var(--accent-gold); color: var(--primary-navy); transform: translateY(-50%) scale(1.1); }
+
+        .carousel-footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
         .carousel-dots { display: flex; gap: 8px; }
         .dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.2); cursor: pointer; transition: var(--transition); }
         .dot.active { background: var(--accent-gold); transform: scale(1.2); }
 
-        /* SEEDING / QUADRADO FIXO DIREITO */
-        .seeding-box { background: rgba(15, 34, 63, 0.95); border: 1px solid var(--border-color); border-radius: 16px; padding: 40px; box-shadow: 0 15px 30px rgba(0,0,0,0.3); display: flex; flex-direction: column; justify-content: center; border-left: 4px solid var(--accent-gold); position: sticky; top: 100px; }
-        .seeding-box h3 { font-size: 1.25rem; color: #FFFFFF; margin-bottom: 20px; font-weight: 700; line-height: 1.4; }
-        .seeding-box ul { list-style: none; margin-bottom: 25px; }
-        .seeding-box li { position: relative; padding-left: 20px; margin-bottom: 14px; font-size: 1.05rem; color: #E2E8F0; line-height: 1.5; }
-        .seeding-box li::before { content: '•'; position: absolute; left: 0; color: var(--accent-gold); font-weight: bold; font-size: 1.3rem; line-height: 1; }
-        .seeding-box .seeding-footer { font-size: 1rem; color: #F8FAFC; line-height: 1.6; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-style: italic; }
+        /* Bloco Direito: Seeding Fixo (Novo Texto de Impacto) */
+        .seeding-box {
+            background: linear-gradient(135deg, rgba(15, 34, 63, 0.95), rgba(6, 17, 33, 0.98));
+            border: 1px solid var(--accent-gold);
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: 0 15px 30px rgba(193, 155, 84, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+        .seeding-box h3 {
+            font-size: 1.25rem;
+            color: var(--accent-gold);
+            margin-bottom: 16px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+        .seeding-intro {
+            font-size: 0.98rem;
+            color: #E2E8F0;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+        .seeding-perguntas {
+            list-style: none;
+            margin-bottom: 16px;
+        }
+        .seeding-perguntas li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            color: #E2E8F0;
+            line-height: 1.5;
+        }
+        .seeding-perguntas li::before {
+            content: '●';
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+            font-size: 0.8rem;
+            top: 2px;
+        }
+        .seeding-conclusao {
+            font-size: 0.98rem;
+            color: #FFFFFF;
+            line-height: 1.5;
+            font-weight: 600;
+            border-left: 3px solid var(--accent-gold);
+            padding-left: 14px;
+            margin-bottom: 20px;
+        }
 
         /* MÉTODO VLR */
         .metodo { padding: 100px 0; background-color: rgba(15, 34, 63, 0.8); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); }
@@ -169,8 +265,8 @@
             border: none; 
             box-shadow: none; 
             background: transparent; 
-            opacity: 0.45;
-            mix-blend-mode: screen;
+            opacity: 0.45; 
+            mix-blend-mode: screen; 
             transition: var(--transition);
         }
         .palestra-logo-clean:hover { opacity: 0.7; }
@@ -195,16 +291,16 @@
         .footer-links a:hover { color: var(--accent-gold); transform: translateY(-4px); }
 
         @media (max-width: 900px) {
-            .sobre-grid { grid-template-columns: 1fr; }
-            .seeding-box { position: static; }
-            .contato-wrapper, .atuacao-grid { grid-template-columns: 1fr; }
+            .contato-wrapper, .atuacao-grid, .sobre-grid { grid-template-columns: 1fr; }
             .palestra-wrapper { flex-direction: column; text-align: center; }
             .palestra-content { text-align: center; }
             .vlr-diagram { flex-direction: column; gap: 40px; align-items: center; }
             .vlr-diagram::before { display: none; }
             .nav-links { display: none; }
             .hero h1 { font-size: 2.2rem; }
-            .carousel-container { padding: 30px 20px; }
+            .historia-box { padding: 30px 20px; }
+            .carousel-btn.prev { left: 5px; top: auto; bottom: 15px; transform: none; }
+            .carousel-btn.next { right: 5px; top: auto; bottom: 15px; transform: none; }
             .palestra-logo-clean { max-width: 250px; }
         }
     </style>
@@ -252,56 +348,63 @@
             </div>
         </section>
 
-        <!-- SOBRE MIM (2 Colunas: Carrossel à Esquerda | Seeding Fixo à Direita) -->
+        <!-- SOBRE MIM & SEEDING -->
         <section class="sobre" id="sobre">
             <div class="container">
                 <h2 class="section-title reveal">Sobre Mim</h2>
                 
                 <div class="sobre-grid reveal">
-                    <!-- Coluna Esquerda: História / Carrossel -->
-                    <div class="carousel-container">
+                    
+                    <!-- Lado Esquerdo: História (Carrossel com setas nas extremidades) -->
+                    <div class="historia-box">
+                        <button class="carousel-btn prev" onclick="mudarSlide(-1)">&#10094;</button>
+                        <button class="carousel-btn next" onclick="mudarSlide(1)">&#10095;</button>
+
                         <div class="carousel-slide active" id="slide-0">
-                            <p style="font-size: 1.15rem; color: var(--accent-gold);"><b>Comecei pela base, na produção, e cada degrau me ensinou o que nenhum organograma mostra.</b></p>
+                            <p style="font-size: 1.05rem; color: var(--accent-gold);"><b>Comecei pela base, na produção, e cada degrau me ensinou o que nenhum organograma mostra.</b></p>
                             <p>Logo depois do ensino médio, entrei na linha de produção, como acontece com tantos brasileiros. Comecei como Auxiliar e, depois de seis anos, cheguei a Operador B, sentindo na pele o ritmo, a pressão e o cansaço de uma operação real.</p>
                             <p>Mas uma pergunta não me largava. Toda vez que eu via supervisores e gerentes em ação, pensava: o que faz essa engrenagem girar além da linha de montagem? Sempre fui fascinado pela indústria e tinha certeza de que poderia ir além.</p>
-                            <p>O mercado cobra um preço pela evolução, e eu decidi pagar. Conquistei, por mérito, uma bolsa no SENAI para o <b>Técnico em Química</b>, e esse foi o passaporte para uma vaga na área da Qualidade.</p>
                         </div>
 
                         <div class="carousel-slide" id="slide-1">
-                            <p>Fiz o ENEM, tirei nota máxima e conquistei uma bolsa integral em <b>Engenharia de Produção</b>. Dominei as metodologias mais rigorosas do mercado global: APQP, PPAP, CEP Avançado, formação de Auditor VDA e me tornei Especialista Internacional na Metodologia 8D.</p>
-                            <p>Em uma multinacional que considero minha grande escola, liderei projetos complexos como Green Belt. Em um deles, em 2019, entreguei mais de 1 milhão de dólares em <i>saving</i> para a companhia.</p>
-                            <p>Ao liderar um time com mais de 50 pessoas, esbarrei na ferida mais exposta do mercado: a falta de líderes preparados. Fui atrás das respostas e realizei o sonho de cursar o <b>MBA em Gestão de Pessoas na USP</b>.</p>
+                            <p>O mercado cobra um preço pela evolução, e eu decidi pagar. Conquistei, por mérito, uma bolsa no SENAI para o <b>Técnico em Química</b>, e esse foi o passaporte para uma vaga na área da Qualidade. Ali, minha visão mudou: descobri que a Qualidade é o setor que conecta a empresa de ponta a ponta.</p>
+                            <p>Fiz o ENEM, tirei nota máxima e conquistei uma bolsa integral em <b>Engenharia de Produção</b>. Dominei as metodologias mais rigorosas: APQP, PPAP, CEP Avançado, Auditor VDA e Especialista Internacional na Metodologia 8D.</p>
+                            <p>Em multinacional, liderei projetos complexos como Green Belt (entregando mais de 1 milhão de dólares em <i>saving</i> em 2019) e assumi a gestão de mais de 50 pessoas, concluindo o <b>MBA em Gestão de Pessoas na USP</b>.</p>
                         </div>
 
                         <div class="carousel-slide" id="slide-2">
-                            <p>Em cargos de gestão, assumi empresas que funcionavam no improviso. Cada uma virou um laboratório da vida real: reestruturei os processos de ponta a ponta e conectei a diretoria à execução do chão de fábrica.</p>
-                            <p>Para fechar o ciclo de entendimento do negócio, trabalhei por um ano como vendedor. Queria sentir de perto as dores de quem está no contato direto com o cliente. O resultado virou um case: aumentei a carteira global em mais de 50%.</p>
+                            <p>Em cargos de gestão estratégica, assumi empresas que funcionavam no improviso: sem padrão e com o operacional desorganizado. Reestruturei os processos de ponta a ponta e conectei a diretoria à execução do chão de fábrica.</p>
+                            <p>Para fechar o ciclo de entendimento do negócio, fiz uma proposta ousada: trabalhar por um ano como vendedor. O resultado virou um case de sucesso: aumentei a carteira global em mais de 50%.</p>
                             <p>Vivi todas essas dores na pele: a falta de processo na base, a liderança despreparada e os gargalos de vendas. Foi assim que criei o <b>Método VLR</b> e fundei a Valorem Consultoria.</p>
                         </div>
 
-                        <div class="carousel-controls">
-                            <button class="carousel-btn" onclick="mudarSlide(-1)">&#10094;</button>
+                        <div class="carousel-footer">
                             <div class="carousel-dots">
                                 <span class="dot active" onclick="irParaSlide(0)"></span>
                                 <span class="dot" onclick="irParaSlide(1)"></span>
                                 <span class="dot" onclick="irParaSlide(2)"></span>
                             </div>
-                            <button class="carousel-btn" onclick="mudarSlide(1)">&#10095;</button>
                         </div>
                     </div>
 
-                    <!-- Coluna Direita: Seeding Fixo (Perguntas Provocativas) -->
+                    <!-- Lado Direito: Seeding Fixo (Novo Texto Solicitado) -->
                     <div class="seeding-box">
-                        <h3>Hoje, eu me faço as perguntas que toda empresa deveria se fazer:</h3>
-                        <ul>
-                            <li>Quanto o retrabalho custa por mês para você?</li>
-                            <li>Seu time entrega o que a estratégia promete?</li>
-                            <li>E suas vendas crescem na mesma velocidade que a sua estrutura?</li>
-                        </ul>
-                        <div class="seeding-footer">
-                            Eu sei onde a sua empresa está perdendo dinheiro e produtividade, porque já sentei em todas as cadeiras do processo. E sei exatamente como consertar.
+                        <div>
+                            <h3>Se suas vendas dobrassem amanhã, o seu time aguentaria?</h3>
+                            <p class="seeding-intro">Na maioria das empresas, o problema que trava o crescimento não aparece no balanço. Ele aparece nas pessoas:</p>
+                            <ul class="seeding-perguntas">
+                                <li>O mesmo erro sendo corrigido todo mês, porque ninguém sabe exatamente o que é esperado dele.</li>
+                                <li>Um time ocupado o dia inteiro, mas que não entrega o que a estratégia promete.</li>
+                                <li>Uma equipe que não cresce na mesma velocidade que as vendas, e bons profissionais indo embora no meio do caminho.</li>
+                            </ul>
+                            <div class="seeding-conclusao">
+                                Cada um parece um problema isolado. Somados, são o dinheiro e a produtividade que você perde sem ver.<br><br>
+                                Eu já estive em todas as cadeiras desse processo: contratando, liderando e corrigindo. E quase sempre o problema não está onde o dono acha que está.
+                            </div>
                         </div>
+                        <a href="#contato" class="btn" style="width: 100%; font-size: 0.9rem; padding: 12px 16px;">Quero descobrir onde meu time está travando</a>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -424,7 +527,7 @@
         </section>
     </main>
 
-    <!-- FOOTER COM ÍCONES -->
+    <!-- FOOTER -->
     <footer>
         <div class="container">
             <p>&copy; Valorem Consultoria • Método VLR. Todos os direitos reservados conforme a legislação vigente.</p>
@@ -477,6 +580,7 @@
         let slideAtual = 0;
         const slides = document.querySelectorAll('.carousel-slide');
         const dots = document.querySelectorAll('.dot');
+        
         function irParaSlide(index) {
             slides.forEach(s => s.classList.remove('active'));
             dots.forEach(d => d.classList.remove('active'));
@@ -484,6 +588,7 @@
             slides[slideAtual].classList.add('active');
             dots[slideAtual].classList.add('active');
         }
+        
         function mudarSlide(direcao) {
             let novoIndex = slideAtual + direcao;
             if (novoIndex >= slides.length) novoIndex = 0;
