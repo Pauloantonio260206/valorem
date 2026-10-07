@@ -1,8 +1,3 @@
-Aqui está o código completo, reescrito e integrado com a função atualizada para disparar a mensagem direto para o seu WhatsApp (`5512987078624`).
-
-Você pode copiar este código inteiro e substituir o conteúdo do seu arquivo principal (por exemplo, `index.html`):
-
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -280,8 +275,8 @@ Você pode copiar este código inteiro e substituir o conteúdo do seu arquivo p
         .contato { padding: 100px 0; background: transparent; color: #FFFFFF; }
         .contato-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
         .contato-info h2 { font-size: 2rem; line-height: 1.3; margin-bottom: 24px; color: #FFFFFF; font-weight: 800; }
-        .contato-info p { color: #E2E8F0; margin-bottom: 40px; font-size: 1.1rem; }
-        .contact-buttons { display: flex; flex-direction: column; gap: 16px; }
+        .contato-info p { color: #E2E8F0; margin-bottom: 25px; font-size: 1.05rem; line-height: 1.6; }
+        .contact-buttons { display: flex; flex-direction: column; gap: 16px; margin-top: 10px; }
         .btn-icon { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; max-width: 400px; padding: 16px 24px;}
         .contato-form { background: transparent; }
         .form-grupo { margin-bottom: 24px; }
@@ -491,19 +486,21 @@ Você pode copiar este código inteiro e substituir o conteúdo do seu arquivo p
             </div>
         </section>
 
-        <!-- CONTATO E REDES SOCIAIS -->
+        <!-- CONTATO E REDES SOCIAIS (COM OS CAMPOS DE TEXTO DIRECIONANDO PARA O WHATSAPP) -->
         <section class="contato" id="contato">
             <div class="container">
                 <div class="contato-wrapper">
                     <div class="contato-info reveal">
                         <h2 class="section-title" style="text-align: left; margin-bottom: 20px; font-size: 1.5rem;">Contato</h2>
                         <h3 style="font-size: 1.8rem; margin-bottom: 20px; line-height: 1.3;">Caso a sua empresa apresente potencial de entrega superior ao atual, o fator limitante pode estar na estrutura de gestão.</h3>
-                        <p>A permanência do desalinhamento operacional resulta na perda contínua de oportunidades, tempo e recursos financeiros. Agende uma conversa para estruturarmos o crescimento da sua organização.</p>
+                        <p>A permanência do desalinhamento operacional resulta na perda contínua de oportunidades, tempo e recursos financeiros. Preencha os campos ao lado e envie sua mensagem para iniciar o atendimento direto no WhatsApp.</p>
                         
                         <div class="contact-buttons">
+                            <!-- Botão direto para o WhatsApp -->
                             <a href="https://wa.me/5512987078624" target="_blank" class="btn btn-icon">
                                 <i class="fa-brands fa-whatsapp" style="font-size: 1.4rem;"></i> Atendimento via WhatsApp
                             </a>
+                            <!-- Botão do LinkedIn -->
                             <a href="https://www.linkedin.com/in/paulo-aantonio/" target="_blank" class="btn-outline btn-icon">
                                 <i class="fa-brands fa-linkedin-in" style="font-size: 1.4rem;"></i> LinkedIn
                             </a>
@@ -608,7 +605,7 @@ Você pode copiar este código inteiro e substituir o conteúdo do seu arquivo p
             document.getElementById('btn-' + letra).classList.add('active-btn');
         }
 
-        // Função de disparo para o WhatsApp
+        // Função de envio do formulário direto para o WhatsApp
         function enviarParaWhatsApp(event) {
             event.preventDefault();
 
@@ -627,5 +624,3 @@ Você pode copiar este código inteiro e substituir o conteúdo do seu arquivo p
     </script>
 </body>
 </html>
-
-```
