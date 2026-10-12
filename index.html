@@ -103,16 +103,9 @@
         .quote-text { font-size: 1.6rem; font-weight: 500; color: #FFFFFF; line-height: 1.5; font-style: italic; margin-bottom: 24px; max-width: 800px; margin-left: auto; margin-right: auto; }
         .quote-author { font-size: 1rem; color: var(--accent-gold); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* TÍTULOS GERAIS */
-        .section-title { color: var(--accent-gold); text-align: center; margin-bottom: 50px; font-size: 2.2rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; }
-        .title-left { text-align: left; margin-bottom: 24px; }
-
-        /* SOBRE MIM - LAYOUT LADO A LADO */
+        /* SOBRE MIM - LAYOUT INVERTIDO (CARROSSEL ESQUERDA, TEXTO DIREITA) */
         .sobre { padding: 100px 0; background: var(--primary-navy); color: #FFFFFF; }
         .sobre-wrapper { display: flex; align-items: stretch; gap: 50px; }
-        
-        .sobre-conteudo { flex: 1; display: flex; flex-direction: column; justify-content: center; }
-        .sobre-conteudo p { font-size: 1.1rem; color: #E2E8F0; line-height: 1.7; margin-bottom: 20px; text-align: justify; }
         
         .carousel-container { flex: 1; width: 100%; position: relative; background: var(--navy-light); border: 1px solid var(--border-color); border-radius: 16px; padding: 40px; box-shadow: 0 15px 30px rgba(0,0,0,0.3); display: flex; flex-direction: column; justify-content: space-between; }
         
@@ -129,6 +122,12 @@
         .carousel-dots { display: flex; gap: 8px; }
         .dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.2); cursor: pointer; transition: var(--transition); }
         .dot.active { background: var(--accent-gold); transform: scale(1.3); }
+
+        .sobre-conteudo { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+        .sobre-conteudo p { font-size: 1.1rem; color: #E2E8F0; line-height: 1.7; margin-bottom: 20px; text-align: justify; }
+        
+        .section-title { color: var(--accent-gold); text-align: center; margin-bottom: 50px; font-size: 2.2rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; }
+        .title-left { text-align: left; margin-bottom: 24px; }
 
         /* MÉTODO VLR */
         .metodo { padding: 100px 0; background-color: var(--navy-light); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); }
@@ -242,29 +241,14 @@
             </div>
         </section>
 
-        <!-- SOBRE MIM (TEXTO FIXO ESQUERDA + CARROSSEL DIREITA) -->
+        <!-- SOBRE MIM (CARROSSEL ESQUERDA, TEXTO DIREITA) -->
         <section class="sobre" id="sobre">
             <div class="container">
                 <div class="sobre-wrapper">
                     
-                    <!-- LADO ESQUERDO: TEXTO COMPLETO SOLICITADO -->
-                    <div class="sobre-conteudo reveal">
-                        <h2 class="section-title title-left">Trajetória e Visão</h2>
-                        
-                        <h3 style="font-size: 1.5rem; color: var(--accent-gold); margin-bottom: 20px; line-height: 1.3;">Se a sua empresa dobrasse de tamanho hoje, a sua estrutura de gestão sustentaria o crescimento?</h3>
-                        
-                        <p>Hoje, eu me faço as perguntas que toda empresa deveria se fazer:</p>
-                        <p><b>• Quanto o retrabalho custa por mês para você?</b><br>
-                        <b>• Seu time entrega o que a estratégia promete?</b><br>
-                        <b>• E suas vendas crescem na mesma velocidade que a sua estrutura?</b></p>
-                        
-                        <p>Eu sei onde a sua empresa está perdendo dinheiro e produtividade, porque já sentei em todas as cadeiras do processo. E sei exatamente como consertar.</p>
-                        
-                        <p>Navegue ao lado para conhecer os bastidores desta jornada — desde o chão de fábrica até a fundação da Valorem Consultoria.</p>
-                    </div>
-
-                    <!-- LADO DIREITO: CARROSSEL COM A SUA HISTÓRIA -->
+                    <!-- LADO ESQUERDO: CARROSSEL COM A SUA HISTÓRIA -->
                     <div class="carousel-container reveal">
+                        <div style="font-size: 1.1rem; color: var(--accent-gold); font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;">Sobre Mim</div>
                         
                         <!-- SLIDE 1 -->
                         <div class="carousel-slide active" id="slide-0">
@@ -299,6 +283,20 @@
                         </div>
 
                     </div>
+
+                    <!-- LADO DIREITO: TEXTO DE IMPACTO E PERGUNTAS -->
+                    <div class="sobre-conteudo reveal">
+                        <h3 style="font-size: 1.8rem; color: #FFFFFF; margin-bottom: 24px; line-height: 1.3;">Se a sua empresa dobrasse de tamanho hoje, a sua estrutura de gestão sustentaria o crescimento?</h3>
+                        
+                        <p>Hoje, eu me faço as perguntas que toda empresa deveria se fazer:</p>
+                        
+                        <p><b>• Quanto o retrabalho custa por mês para você?</b><br>
+                        <b>• Seu time entrega o que a estratégia promete?</b><br>
+                        <b>• E suas vendas crescem na mesma velocidade que a sua estrutura?</b></p>
+                        
+                        <p>Eu sei onde a sua empresa está perdendo dinheiro e produtividade, porque já sentei em todas as cadeiras do processo. E sei exatamente como consertar.</p>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -369,7 +367,7 @@
                         <span class="palestra-badge">Palestra Destaque</span>
                         <h3>Conectando Gerações: O Novo RH e a NR1</h3>
                         
-                        <p>O mercado de trabalho mudou, e a legislação também. Com as novas exigências da <b>NR1</b> sobre o gerenciamento de <b>riscos psicossociais</b>, resolver o choque cultural entre líderes experientes e a Geração Z deixou de ser um detalhe para se tornar uma urgência estratégica.</p>
+                        <p>O mercado de trabalho mudou, e a legislação também. Com las novas exigências da <b>NR1</b> sobre o gerenciamento de <b>riscos psicossociais</b>, resolver o choque cultural entre líderes experientes e a Geração Z deixou de ser um detalhe para se tornar uma urgência estratégica.</p>
                         
                         <p>Nesta palestra, o foco é a gestão de pessoas na prática. Deixamos a teoria de lado para mergulhar em exemplos reais e situações desafiadoras que vivenciei e solucionei ao longo da minha carreira, enfrentando a realidade da indústria desde a base operacional até a gestão executiva.</p>
                         
