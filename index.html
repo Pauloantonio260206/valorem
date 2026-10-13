@@ -433,4 +433,54 @@
 
     <!-- FOOTER COM LINKS -->
     <footer>
-        <div class
+        <div class="container">
+            <p>&copy; Valorem Consultoria • Pessoas, Processos, Resultados.</p>
+            <div class="footer-links">
+                <a href="https://wa.me/5512987078624" target="_blank">WhatsApp</a>
+                <a href="https://www.linkedin.com/in/valoremconsultoria/" target="_blank">LinkedIn</a>
+                <a href="https://www.instagram.com/valorem.consultoria/" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                if (elementTop < windowHeight - 50) { 
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        setTimeout(reveal, 100); 
+
+        let slideAtual = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.dot');
+        function irParaSlide(index) {
+            slides.forEach(s => s.classList.remove('active'));
+            dots.forEach(d => d.classList.remove('active'));
+            slideAtual = index;
+            slides[slideAtual].classList.add('active');
+            dots[slideAtual].classList.add('active');
+        }
+        function mudarSlide(direcao) {
+            let novoIndex = slideAtual + direcao;
+            if (novoIndex >= slides.length) novoIndex = 0;
+            if (novoIndex < 0) novoIndex = slides.length - 1;
+            irParaSlide(novoIndex);
+        }
+
+        function mostrarVLR(letra) {
+            document.querySelectorAll('.vlr-text-block').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.vlr-btn').forEach(b => b.classList.remove('active-btn'));
+            document.getElementById('content-' + letra).classList.add('active');
+            document.getElementById('btn-' + letra).classList.add('active-btn');
+        }
+    </script>
+</body>
+</html>
