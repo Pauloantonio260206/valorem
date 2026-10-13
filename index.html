@@ -66,8 +66,8 @@
         .nav-container { display: flex; justify-content: space-between; align-items: center; height: 80px; }
         .logo-brand { display: flex; align-items: center; gap: 14px; }
         
-        .logo-img-container { width: 48px; height: 48px; border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: var(--navy-light); border: 1px solid var(--accent-gold); }
-        .logo-img { width: 100%; height: 100%; object-fit: contain; }
+        .logo-img-container { width: 48px; height: 48px; border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: var(--navy-light); border: 1px solid var(--border-color); }
+        .logo-img { width: 100%; height: 100%; object-fit: cover; }
 
         .logo-text { display: flex; flex-direction: column; }
         .logo-title { font-size: 1.3rem; font-weight: 800; color: #FFFFFF; letter-spacing: 1px; text-transform: uppercase; }
@@ -98,7 +98,7 @@
         .quote-text { font-size: 1.6rem; font-weight: 500; color: #FFFFFF; line-height: 1.5; font-style: italic; margin-bottom: 24px; max-width: 800px; margin-left: auto; margin-right: auto; }
         .quote-author { font-size: 1rem; color: var(--accent-gold); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* SOBRE MIM - LAYOUT INVERTIDO (CARROSSEL ESQUERDA, TEXTO DIREITA) */
+        /* SOBRE MIM (CARROSSEL ESQUERDA, TEXTO DIREITA) */
         .sobre { padding: 100px 0; background: var(--primary-navy); color: #FFFFFF; }
         .sobre-wrapper { display: flex; align-items: stretch; gap: 50px; }
         
@@ -148,7 +148,7 @@
         .atuacao-card:hover { border-color: var(--border-color); background-color: rgba(193, 155, 84, 0.05); }
         .atuacao-num { color: var(--accent-gold); font-size: 1.4rem; font-weight: 800; }
 
-        /* PALESTRAS */
+        /* PALESTRAS - IMAGEM RETANGULAR / QUADRADA ELEGANTE */
         .palestras { padding: 100px 0; background: var(--navy-light); border-top: 1px solid rgba(255,255,255,0.05); }
         .palestra-wrapper { display: flex; align-items: center; justify-content: space-between; gap: 60px; max-width: 1050px; margin: 0 auto; }
         .palestra-content { flex: 1; text-align: left; }
@@ -157,8 +157,8 @@
         .palestra-content p { font-size: 1.1rem; color: #E2E8F0; margin-bottom: 24px; line-height: 1.7; text-align: justify; }
         
         .palestra-image-box { flex: 1; display: flex; justify-content: center; position: relative; }
-        .circulo-logo-container { width: 350px; height: 350px; border-radius: 50%; border: 4px solid var(--accent-gold); box-shadow: 0 20px 40px rgba(0,0,0,0.4); background-color: var(--primary-navy); display: flex; align-items: center; justify-content: center; overflow: hidden; }
-        .circulo-logo { width: 100%; height: 100%; object-fit: contain; padding: 25px; }
+        .logo-quadrada-container { width: 340px; height: 340px; border-radius: 16px; border: 2px solid var(--accent-gold); box-shadow: 0 20px 40px rgba(0,0,0,0.4); background-color: var(--primary-navy); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .logo-quadrada { width: 100%; height: 100%; object-fit: cover; }
 
         /* CONTATO E REDES SOCIAIS */
         .contato { padding: 100px 0; background: var(--primary-navy); color: #FFFFFF; }
@@ -191,7 +191,7 @@
             .nav-links { display: none; }
             .hero h1 { font-size: 2.2rem; }
             .carousel-container { padding: 30px 20px; }
-            .circulo-logo-container { width: 250px; height: 250px; margin: 0 auto; }
+            .logo-quadrada-container { width: 250px; height: 250px; margin: 0 auto; }
         }
     </style>
 </head>
@@ -378,8 +378,8 @@
                         </a>
                     </div>
                     <div class="palestra-image-box">
-                        <div class="circulo-logo-container">
-                            <img src="Logo.jpeg.jpg" alt="Logotipo Valorem Consultoria" class="circulo-logo">
+                        <div class="logo-quadrada-container">
+                            <img src="Logo.jpeg.jpg" alt="Logotipo Valorem Consultoria" class="logo-quadrada">
                         </div>
                     </div>
                 </div>
