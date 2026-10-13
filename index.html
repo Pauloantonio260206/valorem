@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valorem Consultoria | Especialistas em Gestão de Pessoas e Liderança</title>
     
-    <link rel="icon" type="image/jpeg" href="logo.jpg" id="favicon">
+    <link rel="icon" type="image/jpeg" href="Logo.jpeg.jpg" id="favicon">
     
     <!-- Meta Tags Otimizadas para SEO -->
     <meta name="description" content="Resultados sustentáveis são construídos com pessoas engajadas. Consultoria especializada em Estratégia, Liderança e Resultados para a indústria. Conheça o Método VLR.">
@@ -16,7 +16,7 @@
     <!-- Open Graph -->
     <meta property="og:title" content="Valorem Consultoria | Método VLR">
     <meta property="og:description" content="Resultados sustentáveis são construídos com pessoas engajadas. Consultoria especializada em Estratégia, Liderança e Resultados.">
-    <meta property="og:image" content="logo.jpg">
+    <meta property="og:image" content="Logo.jpeg.jpg">
     <meta property="og:type" content="website">
 
     <!-- Fontes Premium -->
@@ -66,10 +66,8 @@
         .nav-container { display: flex; justify-content: space-between; align-items: center; height: 80px; }
         .logo-brand { display: flex; align-items: center; gap: 14px; }
         
-        /* Sistema de Logotipo Robusto (Exibe imagem se existir, ou emblema corporativo elegante de fallback) */
-        .logo-img-container { width: 48px; height: 48px; border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--navy-light), var(--primary-navy)); border: 1px solid var(--accent-gold); }
-        .logo-img { width: 100%; height: 100%; object-fit: contain; display: none; }
-        .logo-fallback { font-size: 1.1rem; font-weight: 800; color: var(--accent-gold); letter-spacing: -1px; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; }
+        .logo-img-container { width: 48px; height: 48px; border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: var(--navy-light); border: 1px solid var(--accent-gold); }
+        .logo-img { width: 100%; height: 100%; object-fit: contain; }
 
         .logo-text { display: flex; flex-direction: column; }
         .logo-title { font-size: 1.3rem; font-weight: 800; color: #FFFFFF; letter-spacing: 1px; text-transform: uppercase; }
@@ -160,8 +158,7 @@
         
         .palestra-image-box { flex: 1; display: flex; justify-content: center; position: relative; }
         .circulo-logo-container { width: 350px; height: 350px; border-radius: 50%; border: 4px solid var(--accent-gold); box-shadow: 0 20px 40px rgba(0,0,0,0.4); background-color: var(--primary-navy); display: flex; align-items: center; justify-content: center; overflow: hidden; }
-        .circulo-logo { width: 100%; height: 100%; object-fit: contain; padding: 30px; display: none; }
-        .circulo-fallback { font-size: 3rem; font-weight: 800; color: var(--accent-gold); letter-spacing: -2px; }
+        .circulo-logo { width: 100%; height: 100%; object-fit: contain; padding: 25px; }
 
         /* CONTATO E REDES SOCIAIS */
         .contato { padding: 100px 0; background: var(--primary-navy); color: #FFFFFF; }
@@ -205,8 +202,7 @@
         <div class="container nav-container">
             <div class="logo-brand">
                 <div class="logo-img-container">
-                    <img src="logo.jpg" alt="Logo Valorem" class="logo-img logo-dinamica" id="logoHeader">
-                    <span class="logo-fallback" id="fallbackHeader">V</span>
+                    <img src="Logo.jpeg.jpg" alt="Logo Valorem" class="logo-img">
                 </div>
                 <div class="logo-text">
                     <span class="logo-title">VALOREM</span>
@@ -383,15 +379,14 @@
                     </div>
                     <div class="palestra-image-box">
                         <div class="circulo-logo-container">
-                            <img src="logo.jpg" alt="Logotipo Valorem Consultoria" class="circulo-logo logo-dinamica" id="logoPalestra">
-                            <span class="circulo-fallback" id="fallbackPalestra">VLR</span>
+                            <img src="Logo.jpeg.jpg" alt="Logotipo Valorem Consultoria" class="circulo-logo">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CONTATO E REDES SOCIAIS (DIRECIONADO PARA paulo.antonio@vlrconsult.com.br) -->
+        <!-- CONTATO E REDES SOCIAIS -->
         <section class="contato" id="contato">
             <div class="container">
                 <div class="contato-wrapper">
@@ -414,7 +409,6 @@
                     </div>
 
                     <div class="contato-form reveal">
-                        <!-- Formulário integrado via Formspree para paulo.antonio@vlrconsult.com.br -->
                         <form action="https://formspree.io/f/xlezbovw" method="POST">
                             <div class="form-grupo">
                                 <label for="nome">Nome Completo</label>
@@ -428,7 +422,6 @@
                                 <label for="mensagem">Mensagem</label>
                                 <textarea id="mensagem" name="mensagem" rows="4" required placeholder="Descreva brevemente a necessidade da sua empresa"></textarea>
                             </div>
-                            <!-- Campo oculto para garantir direcionamento limpo -->
                             <input type="hidden" name="_to" value="paulo.antonio@vlrconsult.com.br">
                             <button type="submit" class="btn" style="width: 100%; border-radius: 4px;">Enviar Mensagem</button>
                         </form>
@@ -452,35 +445,6 @@
 
     <!-- SCRIPTS -->
     <script>
-        // 1. CARREGAMENTO INTELIGENTE DA IMAGEM PARA GARANTIR QUE APAREÇA NO VERCEL
-        document.addEventListener("DOMContentLoaded", function() {
-            const logoNomes = ['logo.jpg', 'Logo.jpg', 'logo.png', 'logo.jpeg', 'valorem.jpg'];
-            
-            function tentarCarregarLogo(imgEl, fallbackEl) {
-                let index = 0;
-                function testarProxima() {
-                    if (index >= logoNomes.length) return; // Mantém o fallback estilizado se nenhuma imagem for encontrada
-                    let testImg = new Image();
-                    let nomeAtual = logoNomes[index];
-                    testImg.onload = function() {
-                        imgEl.src = nomeAtual;
-                        imgEl.style.display = 'block';
-                        fallbackEl.style.display = 'none';
-                    };
-                    testImg.onerror = function() {
-                        index++;
-                        testarProxima();
-                    };
-                    testImg.src = nomeAtual;
-                }
-                testarProxima();
-            }
-
-            tentarCarregarLogo(document.getElementById('logoHeader'), document.getElementById('fallbackHeader'));
-            tentarCarregarLogo(document.getElementById('logoPalestra'), document.getElementById('fallbackPalestra'));
-        });
-
-        // 2. Animações de scroll
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
@@ -494,7 +458,6 @@
         window.addEventListener("scroll", reveal);
         setTimeout(reveal, 100); 
 
-        // 3. Carrossel
         let slideAtual = 0;
         const slides = document.querySelectorAll('.carousel-slide');
         const dots = document.querySelectorAll('.dot');
@@ -512,10 +475,9 @@
             irParaSlide(novoIndex);
         }
 
-        // 4. Botões VLR
         function mostrarVLR(letra) {
             document.querySelectorAll('.vlr-text-block').forEach(b => b.classList.remove('active'));
-            document.querySelectorAll('.vlr-btn').force ? '' : document.querySelectorAll('.vlr-btn').forEach(b => b.classList.remove('active-btn'));
+            document.querySelectorAll('.vlr-btn').forEach(b => b.classList.remove('active-btn'));
             document.getElementById('content-' + letra).classList.add('active');
             document.getElementById('btn-' + letra).classList.add('active-btn');
         }
