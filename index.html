@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -5,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valorem Consultoria | Especialistas em Gestão de Pessoas e Liderança</title>
     
-    <link rel="icon" type="image/jpeg" href="Logo.jpeg.jpg" id="favicon">
+    <link rel="icon" type="image/png" href="logo.png" id="favicon">
     
     <meta name="description" content="Resultados sustentáveis são construídos com pessoas engajadas. Consultoria especializada em Estratégia, Liderança e Resultados.">
 
@@ -47,7 +48,7 @@
             top: 50%; left: 50%; 
             transform: translate(-50%, -50%);
             width: 100vw; height: 100vh; 
-            background-image: url('./Logo.jpeg.jpg');
+            background-image: url('./logo.png');
             background-repeat: no-repeat;
             background-position: center; 
             background-size: 50%; 
@@ -72,7 +73,7 @@
         }
         .nav-container { display: flex; justify-content: space-between; align-items: center; height: 80px; }
         .logo-brand { display: flex; align-items: center; gap: 14px; }
-        .logo-img { height: 48px; border-radius: 6px; object-fit: contain; }
+        .logo-img { height: 44px; width: auto; object-fit: contain; background: transparent; mix-blend-mode: screen; }
         .logo-text { display: flex; flex-direction: column; }
         .logo-title { font-size: 1.3rem; font-weight: 800; color: #FFFFFF; letter-spacing: 1px; text-transform: uppercase; }
         .logo-tagline { font-size: 0.7rem; color: var(--accent-gold); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
@@ -252,12 +253,10 @@
         .palestras { padding: 100px 0; background: rgba(15, 34, 63, 0.8); border-top: 1px solid rgba(255,255,255,0.05); }
         .palestra-wrapper { display: flex; align-items: center; justify-content: space-between; gap: 60px; max-width: 1000px; margin: 0 auto; }
         .palestra-content { flex: 1; text-align: left; }
-        .palestra-badge { background: var(--accent-gold); color: var(--primary-navy); padding: 8px 20px; font-size: 0.9rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; display: inline-block; margin-bottom: 24px; border-radius: 4px; }
         .palestra-content h3 { font-size: 2.2rem; color: #FFFFFF; margin-bottom: 20px; font-weight: 800; }
         .palestra-content p { font-size: 1.1rem; color: #E2E8F0; margin-bottom: 30px; line-height: 1.7; }
         .palestra-image-box { flex: 1; display: flex; justify-content: center; position: relative; }
         
-        /* Estilo para as imagens das palestras (Logo3.jpg e Logo4.jpg) */
         .palestra-img-card { 
             width: 100%; 
             max-width: 440px; 
@@ -309,7 +308,7 @@
     <header>
         <div class="container nav-container">
             <div class="logo-brand">
-                <img src="./Logo.jpeg.jpg" alt="Logotipo Valorem Consultoria" class="logo-img logo-dinamica">
+                <img src="./logo.png" alt="Logotipo Valorem Consultoria" class="logo-img logo-dinamica" onerror="this.src='./Logo.jpeg.jpg'">
                 <div class="logo-text">
                     <span class="logo-title">VALOREM</span>
                     <span class="logo-tagline">Consultoria</span>
@@ -471,7 +470,6 @@
                 
                 <div class="palestra-wrapper reveal" style="margin-bottom: 60px;">
                     <div class="palestra-content">
-                        <span class="palestra-badge">Palestra Destaque 01</span>
                         <h3>Conectando Gerações: O que a Geração Z Não Te Conta e Como Isso Afeta a Operação</h3>
                         <p>Levantamentos do setor corporativo indicam perdas operacionais decorrentes de ruídos de comunicação e conflitos intergeracionais. Nesta apresentação, analisam-se as divergências culturais no ambiente de trabalho contemporâneo, abordando os aspectos comportamentais e as percepções da Geração Z quanto às lideranças tradicionais, propondo estratégias para transformar potenciais conflitos em engajamento produtivo e adequação à Norma Regulamentadora nº 1 (NR-1).</p>
                         <a href="https://wa.me/5512987078624" target="_blank" class="btn">
@@ -479,14 +477,12 @@
                         </a>
                     </div>
                     <div class="palestra-image-box">
-                        <!-- Imagem Logo3.jpg para Conectando Gerações -->
                         <img src="./Logo3.jpg" alt="Conectando Gerações - Valorem Consultoria" class="palestra-img-card">
                     </div>
                 </div>
 
                 <div class="palestra-wrapper reveal">
                     <div class="palestra-content">
-                        <span class="palestra-badge">Palestra Destaque 02</span>
                         <h3>Sorriso na Voz: A Arte de Encantar e Converter em Cada Contato</h3>
                         <p>Treinamento voltado à capacitação de equipes comerciais e de atendimento ao público, objetivando a otimização do relacionamento e a conversão de interações operacionais em conexões institucionais efetivas. Com abordagem centrada na comunicação empática e inteligência emocional, fornece diretrizes para elevar a satisfação dos clientes e maximizar a performance comercial.</p>
                         <a href="https://wa.me/5512987078624" target="_blank" class="btn">
@@ -494,7 +490,6 @@
                         </a>
                     </div>
                     <div class="palestra-image-box">
-                        <!-- Imagem Logo4.jpg para Sorriso na Voz -->
                         <img src="./Logo4.jpg" alt="Sorriso na Voz - Valorem Consultoria" class="palestra-img-card">
                     </div>
                 </div>
@@ -517,7 +512,6 @@
                             <a href="https://www.linkedin.com/in/paulo-aantonio/" target="_blank" class="btn-outline btn-icon">
                                 <i class="fa-brands fa-linkedin-in" style="font-size: 1.4rem;"></i> LinkedIn
                             </a>
-                            <!-- Instagram adicionado nos botões de contato -->
                             <a href="https://www.instagram.com/valorem.consultoria" target="_blank" class="btn-outline btn-icon">
                                 <i class="fa-brands fa-instagram" style="font-size: 1.4rem;"></i> Instagram
                             </a>
@@ -525,7 +519,6 @@
                     </div>
 
                     <div class="contato-form reveal">
-                        <!-- Formulário configurado para o Formspree oficial -->
                         <form action="https://formspree.io/f/mwlvrwnk" method="POST">
                             <div class="form-grupo">
                                 <label for="nome">Nome Completo</label>
@@ -547,20 +540,17 @@
         </section>
     </main>
 
-    <!-- FOOTER COM TODOS OS ÍCONES (WHATSAPP, LINKEDIN E INSTAGRAM) -->
+    <!-- FOOTER COM TODOS OS ÍCONES -->
     <footer>
         <div class="container">
             <p>&copy; Valorem Consultoria • Método VLR. Todos os direitos reservados conforme a legislação vigente.</p>
             <div class="footer-links">
-                <!-- WhatsApp -->
                 <a href="https://wa.me/5512987078624" target="_blank" aria-label="WhatsApp">
                     <i class="fa-brands fa-whatsapp"></i>
                 </a>
-                <!-- LinkedIn -->
                 <a href="https://www.linkedin.com/in/paulo-aantonio/" target="_blank" aria-label="LinkedIn">
                     <i class="fa-brands fa-linkedin-in"></i>
                 </a>
-                <!-- Instagram -->
                 <a href="https://www.instagram.com/valorem.consultoria" target="_blank" aria-label="Instagram">
                     <i class="fa-brands fa-instagram"></i>
                 </a>
@@ -571,7 +561,7 @@
     <!-- SCRIPTS -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const logoNomes = ['./Logo.jpeg.jpg', 'logo.jpg', 'Logo.jpg', 'logo.png', 'logo.jpeg', 'valorem.jpg'];
+            const logoNomes = ['./logo.png', './Logo.jpeg.jpg', 'logo.jpg', 'Logo.jpg', 'logo.png', 'logo.jpeg', 'valorem.jpg'];
             const imagensLogo = document.querySelectorAll('.logo-dinamica');
             
             function tentarCarregar(imgElement, index) {
@@ -628,3 +618,5 @@
     </script>
 </body>
 </html>
+
+```
