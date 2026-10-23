@@ -1,6 +1,5 @@
-```html
 <!DOCTYPE html>
-<html lang="pt-PT">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -258,20 +257,18 @@
         .palestra-content p { font-size: 1.1rem; color: #E2E8F0; margin-bottom: 30px; line-height: 1.7; }
         .palestra-image-box { flex: 1; display: flex; justify-content: center; position: relative; }
         
-        /* Ajuste limpo para a imagem 'logo2.jpeg' com remoção de fundo no tema escuro */
-        .palestra-logo-clean { 
+        /* Estilo para as imagens das palestras (Logo3.jpg e Logo4.jpg) */
+        .palestra-img-card { 
             width: 100%; 
-            max-width: 320px; 
+            max-width: 440px; 
             height: auto; 
-            object-fit: contain; 
-            border: none; 
-            box-shadow: none; 
-            background: transparent; 
-            opacity: 0.9; 
-            mix-blend-mode: screen; 
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            object-fit: cover;
             transition: var(--transition);
         }
-        .palestra-logo-clean:hover { opacity: 1; }
+        .palestra-img-card:hover { transform: scale(1.02); border-color: var(--accent-gold); }
 
         /* CONTATO E REDES SOCIAIS */
         .contato { padding: 100px 0; background: transparent; color: #FFFFFF; }
@@ -303,7 +300,7 @@
             .historia-box { padding: 30px 20px; }
             .carousel-btn.prev { left: 5px; top: auto; bottom: 15px; transform: none; }
             .carousel-btn.next { right: 5px; top: auto; bottom: 15px; transform: none; }
-            .palestra-logo-clean { max-width: 250px; }
+            .palestra-img-card { max-width: 100%; }
         }
     </style>
 </head>
@@ -482,8 +479,8 @@
                         </a>
                     </div>
                     <div class="palestra-image-box">
-                        <!-- Imagem logo2.jpeg integrada corretamente com tratamento visual -->
-                        <img src="./logo2.jpeg" alt="Logotipo Valorem Consultoria" class="palestra-logo-clean logo-dinamica" onerror="this.src='./Logo.jpeg.jpg'">
+                        <!-- Imagem Logo3.jpg para Conectando Gerações -->
+                        <img src="./Logo3.jpg" alt="Conectando Gerações - Valorem Consultoria" class="palestra-img-card">
                     </div>
                 </div>
 
@@ -497,7 +494,8 @@
                         </a>
                     </div>
                     <div class="palestra-image-box">
-                        <img src="./logo2.jpeg" alt="Logotipo Valorem Consultoria" class="palestra-logo-clean logo-dinamica" onerror="this.src='./Logo.jpeg.jpg'">
+                        <!-- Imagem Logo4.jpg para Sorriso na Voz -->
+                        <img src="./Logo4.jpg" alt="Sorriso na Voz - Valorem Consultoria" class="palestra-img-card">
                     </div>
                 </div>
             </div>
@@ -519,11 +517,15 @@
                             <a href="https://www.linkedin.com/in/paulo-aantonio/" target="_blank" class="btn-outline btn-icon">
                                 <i class="fa-brands fa-linkedin-in" style="font-size: 1.4rem;"></i> LinkedIn
                             </a>
+                            <!-- Instagram adicionado nos botões de contato -->
+                            <a href="https://www.instagram.com/valorem.consultoria" target="_blank" class="btn-outline btn-icon">
+                                <i class="fa-brands fa-instagram" style="font-size: 1.4rem;"></i> Instagram
+                            </a>
                         </div>
                     </div>
 
                     <div class="contato-form reveal">
-                        <!-- Formulário configurado para o Formspree com o link fornecido -->
+                        <!-- Formulário configurado para o Formspree oficial -->
                         <form action="https://formspree.io/f/mwlvrwnk" method="POST">
                             <div class="form-grupo">
                                 <label for="nome">Nome Completo</label>
@@ -545,7 +547,7 @@
         </section>
     </main>
 
-    <!-- FOOTER COM ÍCONES E INSTAGRAM CORRIGIDO -->
+    <!-- FOOTER COM TODOS OS ÍCONES (WHATSAPP, LINKEDIN E INSTAGRAM) -->
     <footer>
         <div class="container">
             <p>&copy; Valorem Consultoria • Método VLR. Todos os direitos reservados conforme a legislação vigente.</p>
@@ -558,7 +560,7 @@
                 <a href="https://www.linkedin.com/in/paulo-aantonio/" target="_blank" aria-label="LinkedIn">
                     <i class="fa-brands fa-linkedin-in"></i>
                 </a>
-                <!-- Instagram corrigido estritamente para valorem.consultoria -->
+                <!-- Instagram -->
                 <a href="https://www.instagram.com/valorem.consultoria" target="_blank" aria-label="Instagram">
                     <i class="fa-brands fa-instagram"></i>
                 </a>
@@ -569,7 +571,7 @@
     <!-- SCRIPTS -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const logoNomes = ['./logo2.jpeg', './Logo.jpeg.jpg', 'logo.jpg', 'Logo.jpg', 'logo.png', 'logo.jpeg', 'valorem.jpg'];
+            const logoNomes = ['./Logo.jpeg.jpg', 'logo.jpg', 'Logo.jpg', 'logo.png', 'logo.jpeg', 'valorem.jpg'];
             const imagensLogo = document.querySelectorAll('.logo-dinamica');
             
             function tentarCarregar(imgElement, index) {
@@ -626,5 +628,3 @@
     </script>
 </body>
 </html>
-
-```
